@@ -11,12 +11,22 @@ export default {
 <template>
   <div class="v-catalog">
     <h1>Catalog </h1>
-    <v-catalog-item/>
-    <v-catalog-item/>
-    <v-catalog-item/>
+    <div class="v-catalog__list">
+      <v-catalog-item/>
+      <v-catalog-item/>
+      <v-catalog-item/>
+    </div>
   </div>
 </template>
 
-<style scoped>
+<style lang="scss">
+  .v-catalog {
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
 
 </style>
