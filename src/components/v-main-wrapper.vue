@@ -18,7 +18,7 @@ import vCart from "@/components/v-cart.vue";
     props: {},
     data() {
       return {
-        title: "Main wrapper"
+        title: "Online-magazine"
       }
     },
     computed: {},

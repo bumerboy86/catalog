@@ -1,10 +1,8 @@
 <template>
-  <p>Hello</p>
   <v-main-vrapper />
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
 import vMainVrapper from "./components/v-main-wrapper.vue";
 
 export default {
