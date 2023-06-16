@@ -24,9 +24,7 @@ import vCart from "@/components/v-cart.vue";
     computed: {},
     methods: {},
     watch: {},
-    mounted() {
-      console.log("Mounted main wrapper")
-    }
+    mounted() {}
   }
 </script>
 
