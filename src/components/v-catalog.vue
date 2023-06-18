@@ -35,7 +35,7 @@ export default {
 
 <template>
   <div class="v-catalog">
-    <h1>E-Catalog</h1>
+    <h1>Е-Каталог</h1>
     <div class="v-catalog__list">
       <v-catalog-item
         v-for="product in PRODUCTS"
