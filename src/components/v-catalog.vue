@@ -52,8 +52,8 @@ export default {
     &__list {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
+      gap: 5px 5px;
+      justify-content: space-around;
     }
   }
 

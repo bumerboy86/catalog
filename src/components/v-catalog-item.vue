@@ -31,9 +31,9 @@ export default {
 <style lang="scss">
   .v-catalog-item {
     flex-basis: 25%;
-    box-shadow: 0 0 8px 0 #e0e0e0;
     padding: $padding*2;
     margin-bottom: $margin*2;
+    box-shadow: 2px 2px #6e6c6c;
     &__image {
       width: 100px;
     }
@@ -43,6 +43,18 @@ export default {
       border: none;
       padding: $padding $padding*2;
       border-radius: $radius;
+    }
+  }
+
+  @media screen and (max-width: 670px) {
+    .v-catalog-item {
+      flex-basis: 35%;
+    }
+  }
+
+  @media screen and (max-width: 430px) {
+    .v-catalog-item {
+      flex-basis: 75%;
     }
   }
 </style>
