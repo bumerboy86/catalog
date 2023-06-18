@@ -18,7 +18,13 @@ export default {
   methods: {
     deleteFromCard() {
       this.$emit('deleteFromCard');
-    }
+    },
+    incrementItem() {
+      this.$emit('incrementItem')
+    },
+    decrementItem() {
+      this.$emit('decrementItem')
+    },
   }
 }
 </script>
@@ -27,11 +33,17 @@ export default {
   <div class="v-cart-item">
     <img class="v-cart-item__image" :src="require(`../assets/images/${cart_item_data.image}`)" alt="img">
     <div class="v-cart-item__info">
-      <p class="v-cart-item__text">{{cart_item_data.name}}</p>
-      <p class="v-cart-item__text">Price {{cart_item_data.price}} тг.</p>
-      <p class="v-cart-item__text">{{cart_item_data.article}}</p>
+      <p class="v-cart-item__text">Наименование: {{cart_item_data.name}}</p>
+      <p class="v-cart-item__text">Цена: {{Math.round(parseFloat(cart_item_data.price) * 10 / 10)}} тг.</p>
+      <p class="v-cart-item__text">Артикл: {{cart_item_data.article}}</p>
     </div>
-    <div class="v-cart-item__quantity">{{cart_item_data.quantity}} шт.</div>
+    <div class="v-cart-item__quantity">
+      <div class="v-cart-item__span-box">
+        <span class="v-cart-item__span" @click="decrementItem">-</span>
+        <p>{{cart_item_data.quantity}} шт.</p>
+        <span class="v-cart-item__span" @click="incrementItem">+</span>
+      </div>
+    </div>
     <button class="v-cart-item__delete-btn" @click="deleteFromCard">Удалить</button>
   </div>
 </template>
@@ -45,8 +57,9 @@ export default {
     border: none;
     padding: $padding $padding*2;
     border-radius: $radius;
-    box-shadow: 2px 2px #6e6c6c;
+    box-shadow: 0 0 13px #6e6c6c;
     margin: 10px;
+    background: #f3f3f3;
     &__image {
       max-width: 50px;
     }
@@ -59,14 +72,26 @@ export default {
       border: none;
       padding: $padding $padding*2;
       border-radius: $radius;
+      cursor: pointer;
     }
     &__quantity {
       display: flex;
+      flex-direction: column;
       padding: 0 10px;
       margin: 0 10px;
       height: 100%;
       align-items: center;
       justify-content: center;
+    }
+    &__span-box {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      justify-content: space-around;
+    }
+    &__span {
+      cursor: pointer;
+      font-weight: bold;
     }
   }
 
@@ -77,6 +102,10 @@ export default {
       flex-direction: column;
       &__quantity {
         margin: 0 10px 10px 10px;
+        width: 100%;
+      }
+      &__delete-btn {
+        margin-bottom: 10px;
       }
     }
   }

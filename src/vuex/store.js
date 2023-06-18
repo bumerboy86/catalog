@@ -30,18 +30,15 @@ const store = createStore({
             }
         },
         REMOVE_FROM_CART: (state, index) => {
-            if (state.cart.length) {
-                let isDeleteProduct = false;
-                state.cart.map((item, i) =>{
-                    if (i === index) {
-                        item.quantity > 1 ? item.quantity-- : isDeleteProduct = true;
-                    }
-                })
-                if (isDeleteProduct) {
-                    state.cart.splice(index, 1);
-                }
-            } else {
-                state.cart.splice(index, 1);
+            state.cart.length && state.cart.splice(index, 1);
+        },
+        INCREMENT: (state, index) => {
+            state.cart[index].quantity++
+        },
+
+        DECREMENT: (state, index) => {
+            if (state.cart[index].quantity > 1) {
+                state.cart[index].quantity--
             }
         }
     },
@@ -64,6 +61,14 @@ const store = createStore({
 
         DELETE_FROM_CART({commit}, index) {
             commit('REMOVE_FROM_CART', index);
+        },
+
+        INCREMENT_FROM_CART({commit}, index) {
+            commit('INCREMENT', index)
+        },
+
+        DECREMENT_FROM_CART({commit},index) {
+            commit('DECREMENT', index)
         }
     },
     getters: {

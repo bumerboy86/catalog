@@ -1,7 +1,7 @@
 <template>
   <nav>
-    <router-link class="nav-link" to="/" active-class="active-link">Home</router-link>
-    <router-link class="nav-link" to="/cart" active-class="active-link">Cart {{GET_TOTAL_PRODUCTS_CART}}</router-link>
+    <router-link class="nav-link" to="/" active-class="active-link">Каталог</router-link>
+    <router-link class="nav-link" to="/cart" active-class="active-link">Корзина {{GET_TOTAL_PRODUCTS_CART}}</router-link>
   </nav>
   <v-main-vrapper />
 </template>
@@ -25,13 +25,17 @@ export default {
 </script>
 
 <style>
+body {
+  margin: 0;
+  padding: 0;
+  background: #ced5d7;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 nav {
   display: flex;
