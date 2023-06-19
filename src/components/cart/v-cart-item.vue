@@ -31,7 +31,7 @@ export default {
 
 <template>
   <div class="v-cart-item">
-    <img class="v-cart-item__image" :src="require(`../assets/images/${cart_item_data.image}`)" alt="img">
+    <img class="v-cart-item__image" :src="require(`../../assets/images/${cart_item_data.image}`)" alt="img">
     <div class="v-cart-item__info">
       <p class="v-cart-item__text">Наименование: {{cart_item_data.name}}</p>
       <p class="v-cart-item__text">Цена: {{Math.round(parseFloat(cart_item_data.price) * 10 / 10)}} тг.</p>
@@ -61,18 +61,22 @@ export default {
     margin: 10px;
     background: #f3f3f3;
     &__image {
-      max-width: 50px;
+      max-width: 100px;
     }
     &__text {
       text-align: left;
     }
     &__delete-btn {
-      background: #e0e0e0;
+      background: #334354;
+      color: #ffffff;
       box-shadow: 0 0 8px 0 #e0e0e0;
       border: none;
       padding: $padding $padding*2;
       border-radius: $radius;
       cursor: pointer;
+    }
+    &__delete-btn:hover {
+      box-shadow: 2px 2px 2px #f88005;
     }
     &__quantity {
       display: flex;

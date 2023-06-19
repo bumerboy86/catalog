@@ -1,7 +1,12 @@
 <template>
   <nav>
     <router-link class="nav-link" to="/" active-class="active-link">Каталог</router-link>
-    <router-link class="nav-link" to="/cart" active-class="active-link">Корзина {{GET_TOTAL_PRODUCTS_CART}}</router-link>
+    <router-link to="/cart">
+      <v-cart-icon
+          :products-number="GET_TOTAL_PRODUCTS_CART"
+      />
+    </router-link>
+
   </nav>
   <v-main-vrapper />
 </template>
@@ -9,10 +14,12 @@
 <script>
 import vMainVrapper from "./components/v-main-wrapper.vue";
 import {mapGetters} from "vuex";
+import VCartIcon from "@/components/UI/v-cart-icon.vue";
 
 export default {
   name: 'App',
   components: {
+    VCartIcon,
     vMainVrapper
   },
   computed: {
@@ -41,6 +48,7 @@ nav {
   display: flex;
   max-width: 900px;
   margin: 0 auto;
+  width: 100%;
 }
 .nav-link {
   text-decoration: none;

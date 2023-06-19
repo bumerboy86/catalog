@@ -1,10 +1,12 @@
 <script>
-import vCatalogItem from "@/components/v-catalog-item.vue";
+import vCatalogItem from "@/components/catalog/v-catalog-item.vue";
+import vSelect from "@/components/UI/v-select.vue";
 import { mapActions, mapGetters } from 'vuex';
 export default {
   name: "v-catalog",
   components: {
-    vCatalogItem
+    vCatalogItem,
+    vSelect
   },
   props: {},
   data() {
@@ -36,6 +38,7 @@ export default {
 <template>
   <div class="v-catalog">
     <h1>Е-Каталог</h1>
+    <v-select />
     <div class="v-catalog__list">
       <v-catalog-item
         v-for="product in PRODUCTS"

@@ -1,5 +1,5 @@
 <script>
-import vCartItem from "@/components/v-cart-item.vue";
+import vCartItem from "@/components/cart/v-cart-item.vue";
 import {mapActions, mapGetters} from "vuex";
 
 export default {
@@ -46,7 +46,7 @@ export default {
 </script>
 
 <template>
-  <h1>Cart</h1>
+  <h1>Корзина</h1>
   <div class="v-cart">
     <v-cart-item
         v-for="(item, index) in cart"
