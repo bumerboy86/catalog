@@ -7,7 +7,7 @@ export default {
             method: "GET"
         }).then((products) => {
             commit('SET_PRODUCT_TO_STATE', products.data);
-            return products;
+            return products.data;
         }).catch((error) => {
             console.log(error);
             return error;
