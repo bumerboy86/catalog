@@ -27,7 +27,7 @@ export default {
 
 <template>
   <div class="v-select">
-    <select class="v-select__select" v-model="selectedOption" @change="emitOptionValue">
+    <select class="v-select__select" v-model="selectedOption" @input="emitOptionValue">
       <option value="all">все</option>
       <option value="Мужские">Мужские</option>
       <option value="Женские">Женские</option>
